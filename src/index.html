@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bé tập tính</title>
+    <link rel="stylesheet" type="text/css" href="./css/output.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="text/javascript" src="./js/script.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <div class="container mx-auto my-10 p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-6 text-left">Bé tập tính</h1>
+        <form id="calcForm">
+            <table class="w-full text-left">
+                <tr>
+                    <td><label for="num1">Số thứ nhất</label></td>
+                    <td><input type="text" id="num1" name="num1" onblur="validateNumber('num1')" required class="border rounded p-1 w-full sm:w-3/4 min-w-[100px]"></td>
+                    <td class="radio-wrapper">
+                        <input type="radio" name="operation" value="add"> 
+                        <label for="add">Cộng</label>
+                    </td>
+                    <td class="radio-wrapper">
+                        <input type="radio" name="operation" value="subtract"> 
+                        <label for="subtract">Trừ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="num2">Số thứ hai</label></td>
+                    <td><input type="text" id="num2" name="num2" onblur="validateNumber('num2')" required class="border rounded p-1 w-full sm:w-3/4 min-w-[100px]"></td>
+                    <td class="radio-wrapper">
+                        <input type="radio" name="operation" value="multiply"> 
+                        <label for="multiply">Nhân</label>
+                    </td>
+                    <td class="radio-wrapper">
+                        <input type="radio" name="operation" value="divide"> 
+                        <label for="divide">Chia</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="result">Kết quả</label></td>
+                    <td><input type="text" id="result" readonly class="border rounded p-1 w-full sm:w-3/4 min-w-[50px]"></td>
+                    <td><button type="button" onclick="calculate()" class="bg-blue-500 text-white py-1 px-1 rounded w-full sm:w-auto min-w-[100px]">Tính</button></td>
+                </tr>
+            </table>
+        </form>  
+        <p id="notification" class="mt-4">Thông báo:</p>
+        <div class="error text-red-500 mt-2" id="error"></div>
+    </div>
+</body>
+</html>
